@@ -42,6 +42,16 @@ Include = /etc/pacman.d/mirrorlist
 [multilib-main]
 Include = /etc/pacman.d/mirrorlist
 ```
+This kind of works for the above:
+```
+for i in jupiter holo  core  extra community multilib; do sed -i.bak "s/$i/$i-main/g" /etc/pacman.conf; done
+```
+But you end up with:
+```
+#[community-main-testing]
+#Include = /etc/pacman.d/mirrorlist
+```
+It's commented, so I am chosing to ignore it. 
 
 [refresh Keys](https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys)
 
