@@ -1,10 +1,16 @@
 ## Setting up environment
-Donwload: https://store.steampowered.com/steamos/download?ver=steamdeck
+Download: https://store.steampowered.com/steamos/download?ver=steamdeck
 
 Unzip: 
 ```
-# bzip2 -d ./steamdeck-recovery-4.img.bz2
+# bzip2 -d /path/to/steamdeck-recovery-4.img.bz2
 ```
+
+Mine was:
+```
+# bzip -d /mnt/steamdeck-recovery-4.img.bz2
+```
+
 Check file information:
 ```
 # fdisk -l ./steamdeck-recovery-4.img
