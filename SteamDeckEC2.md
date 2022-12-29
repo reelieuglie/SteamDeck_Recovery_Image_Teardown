@@ -45,7 +45,8 @@ Include = /etc/pacman.d/mirrorlist
 
 [refresh Keys](https://wiki.archlinux.org/title/Pacman/Package_signing#Resetting_all_the_keys)
 
+
+* Add needed Keys
 ```
-# pacman-key --refresh-keys
-```
+# rm -R /etc/pacman.d/gnupg; pacman -Sc; pacman-key --init; pacman-key --populate archlinux
 
