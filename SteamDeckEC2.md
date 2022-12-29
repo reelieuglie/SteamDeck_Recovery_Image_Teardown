@@ -1,5 +1,5 @@
 ## Putting SteamDeck OS on EC2
-See `Basics` to create environment for chroot
+See [Basics](https://github.com/reelieuglie/SteamDeck_Recovery_Image_Teardown/blob/main/Basics.md) to create environment for chroot
 
 [Install Arch Packages on Steam Deck - Reddit](https://www.reddit.com/r/SteamDeck/comments/t8al0i/install_arch_packages_on_your_steam_deck/)
 [Steam Deck Repository](https://steamdeck-packages.steamos.cloud/archlinux-mirror/)
