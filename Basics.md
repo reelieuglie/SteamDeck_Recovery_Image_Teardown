@@ -8,7 +8,7 @@ Unzip:
 
 Mine was:
 ```
-# bzip -d /mnt/steamdeck-recovery-4.img.bz2
+# bzip2 -d /mnt/steamdeck-recovery-4.img.bz2
 ```
 
 Check file information:
