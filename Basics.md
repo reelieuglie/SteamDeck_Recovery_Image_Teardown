@@ -45,6 +45,7 @@ ip-172-31-4-246:/mnt3 # file ./boot/vmlinuz-linux-neptune
 ./boot/initramfs-linux-neptune.img: ASCII cpio archive (SVR4 with no CRC)
 ```
 
+### Configuration Info
 ```
 ip-172-31-4-246:/mnt3/etc # ls
 .pwd.lock       avahi                   crypttab       ethertypes  grub.d            iptables       libnl        makepkg.conf    netconfig      ostree-mkinitcpio.conf  profile           rsyncd.conf    skel               sysctl.d           xattr.conf
