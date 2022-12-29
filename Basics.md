@@ -31,9 +31,9 @@ Device                         Start      End  Sectors  Size Type
 Mount as loop device. Offset is start sector * sector size, sizelimit is number of sectors * sector size.
 
 ```
- mount -o loop,offset=$((655360 * 512)),sizelimit=$((10485760 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/home/ 
- mount -o loop,offset=$((11141120 * 512)),sizelimit=$((524288 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/var/ 
- mount -o loop,offset=5972688896,sizelimit=$((3459559 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/home/
+ mount -o loop,offset=$((655360 * 512)),sizelimit=$((10485760 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/ \
+ mount -o loop,offset=$((11141120 * 512)),sizelimit=$((524288 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/var/ \
+ mount -o loop,offset=$((11665408 * 512)),sizelimit=$((3459559 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/home/
 ```
 ## Looking at Boot information
 ```
