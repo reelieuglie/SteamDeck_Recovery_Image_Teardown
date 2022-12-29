@@ -57,6 +57,45 @@ It's commented, so I am chosing to ignore it.
 
 
 * Add needed Keys
-```
-# rm -R /etc/pacman.d/gnupg; pacman -Sc; pacman-key --init; pacman-key --populate archlinux
+* [Importing Keys](https://keys.openpgp.org/about/usage)
+* SteamDeck uses a different path for pacman.db and cache as well, so we'll alias it for easier life. 
 
+```
+# alias pacman='pacman --dbpath /usr/share/factory/var/lib/pacman/sync/ --cachedir /usr/share/factory/var/lib/pacman/sync/'
+# rm -R /etc/pacman.d/gnupg; pacman -Sc; pacman-key --init; pacman-key --populate archlinux; pacman-key --refresh-keys
+# gpg --auto-key-locate keyserver --locate-keys frederik.schwan@linux.com
+```
+There'll be a list of keys, grab the keyIDs for the below commands.
+
+```
+# pacman-key --recv-keys 209E47167FD149DF  2C1A29D18AEA461F 9D4C5AA15426DA0A 5EE659C16E8869B8 BE1B8C95BC9A8FA4 E78132EB5F053970
+# pacman-key --lsign-key 209E47167FD149DF  2C1A29D18AEA461F 9D4C5AA15426DA0A 5EE659C16E8869B8 BE1B8C95BC9A8FA4 E78132EB5F053970
+```
+
+We need(?) to overwrite the packages, because they aren't (?) owned by pacman.
+* Question marks because something seems off about this, but yolo. 
+```
+ # pacman -Sy --overwrite "*" archlinux-keyring
+ # pacman -Sy --overwrite "*" cloud-init
+ 
+```
+
+Cloud-Init config:
+```
+system_info:
+   # This will affect which distro class gets used
+   distro: arch
+   # Default user name + that default users groups (if added/used)
+   default_user:
+     name: arch
+     lock_passwd: True
+     gecos: arch Cloud User
+     groups: [wheel, users]
+     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+     shell: /bin/bash
+   # Other config here will be given to the distro class and/or path classes
+   paths:
+      cloud_dir: /var/lib/cloud/
+      templates_dir: /etc/cloud/templates/
+   ssh_svcname: sshd
+   ```
