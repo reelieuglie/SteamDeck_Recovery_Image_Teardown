@@ -1,3 +1,6 @@
+## Setting up environment
+Donwload: https://store.steampowered.com/steamos/download?ver=steamdeck
+
 Unzip: 
 ```
 # bzip2 -d ./steamdeck-recovery-4.img.bz2
@@ -19,22 +22,14 @@ Device                         Start      End  Sectors  Size Type
 ./steamdeck-recovery-4.img4 11141120 11665407   524288  256M Linux variable data
 ./steamdeck-recovery-4.img5 11665408 15124966  3459559  1.6G Linux home
 ```
+Mount as loop device. Offset is start sector * sector size, sizelimit is number of sectors * sector size.
 
 ```
-# echo '512 * 655360' | bc
-335544320
+ mount -o loop,offset=$((655360 * 512)),sizelimit=$((10485760 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/home/ 
+ mount -o loop,offset=$((11141120 * 512)),sizelimit=$((524288 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/var/ 
+ mount -o loop,offset=5972688896,sizelimit=$((3459559 * 512)) /mnt/steamdeck-recovery-4.img /mnt3/home/
 ```
-
-```
- echo '512 * 11665408' | bc
-5972688896
-```
-
-
-```
-# mount -o loop,offset=335544320 ./steamdeck-recovery-4.img  /mnt3/
-```
-
+## Looking at Boot information
 ```
 # ls ./boot/
 amd-ucode.img  efi  grub  initramfs-linux-neptune.img  vmlinuz-linux-neptune
