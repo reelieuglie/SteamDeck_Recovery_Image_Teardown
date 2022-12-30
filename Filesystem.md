@@ -12,3 +12,4 @@ fstab file:
 /dev/disk/by-partsets/shared/esp  /esp    vfat    defaults,nofail,umask=0077,x-systemd.automount,x-systemd.idle-timeout=1min 0       2
 /dev/disk/by-partsets/shared/home /home   ext4    defaults,nofail,x-systemd.growfs 0       2
 ```
+[x-systemd.growfs](https://manpages.debian.org/testing/systemd/systemd-growfs.8.en.html)
