@@ -12,3 +12,5 @@ https://gitlab.com/popsulfr/steamos-btrfs
 https://www.svenknebel.de/posts/
 
 https://github.com/Chloe-ko/SteamDeckPersistentRootFs
+
+https://github.com/theVakhovskeIsTaken/holoiso
