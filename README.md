@@ -6,7 +6,7 @@ For fun.
 
 # But someone else has done this, and they have more information
 
-Probably. I'll try to link any references or things I stumble across as I go along. 
+Probably. I'll try to link any references or things I stumble across as I flail about this project. 
 
 # This is very disorganized
 
