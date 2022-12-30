@@ -1,5 +1,10 @@
+## Someone Beat Me To It
+That person is here -> https://github.com/randombk/steamos-teardown
+
+Props to them, and awesome resource now that I found it. 
 ## Setting up environment
 Download: https://store.steampowered.com/steamos/download?ver=steamdeck
+
 
 Unzip: 
 ```
